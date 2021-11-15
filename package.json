@@ -1,0 +1,15 @@
+{
+  "name": "scrapping_gr491",
+  "version": "1.0.0",
+  "description": "Scrapping GR491 web site information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "mrchlm",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^11.0.0"
+  }
+}
