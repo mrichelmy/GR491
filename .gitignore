@@ -1,3 +1,26 @@
 backend/node_modules
-backend/gr491.json
 backend/package-lock.json
+
+# dependencies
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+
+# testing
+frontend/coverage
+
+# production
+frontend/src/build
+frontend/src/gr491.json*
+
+# misc
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/tsconfig.json
+frontend/yarn.lock

@@ -4,6 +4,7 @@ const scraperObject = {
         'https://gr491.isit-europe.org/crit.php?id=3-uxui-afin-d%E2%80%99etre-responsable-le',
         'https://gr491.isit-europe.org/crit.php?id=3-uxui-reduire-les-inegalites-d%E2%80%99acces'
     ],
+    id: 0,
     async scraper(browser, category){
         let scrapedData = [];
         let page = await browser.newPage();
@@ -22,6 +23,7 @@ const scraperObject = {
             let newPage = await browser.newPage();
             await newPage.goto(link);
             // Build your dataObj
+            dataObj['id'] = this.id++;
             dataObj['title'] = await newPage.$eval('h1', text => text.textContent);
             dataObj['url'] = link;
             dataObj['category'] = await newPage.$eval('#chapeau .odd span', text => text.textContent);
