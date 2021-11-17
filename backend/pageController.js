@@ -15,7 +15,7 @@ async function scrapeAll(browserInstance){
         scrapedSite['backend'] = await pageScraper.scraper(browser, 'backend');
         scrapedSite['hebergement'] = await pageScraper.scraper(browser, 'hebergement');
         await browser.close();
-        fs.writeFile("gr491.json", JSON.stringify(scrapedSite), 'utf8', function(err) {
+        fs.writeFile(__dirname + '/../frontend/src/' + "gr491.json", JSON.stringify(scrapedSite), 'utf8', function(err) {
             if(err) return console.log(err);
         })
 
