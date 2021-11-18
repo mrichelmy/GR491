@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Box, CardContent, Typography, Grid } from '@mui/material';
+import { Card, Box, CardContent, Typography } from '@mui/material';
 import data from '../gr491.json';
 
 export default function DetailCard(props) {
@@ -12,6 +12,7 @@ export default function DetailCard(props) {
         'Prosperity': currentRef?.impacts[2] ,
         'Difficulty': currentRef?.difficulty,
         'Life Cycle': currentRef?.life_cycle,
+        'SDG': currentRef?.odd.map(sdg => sdg.split('#')[1] + ' | ')
 
     }
 
