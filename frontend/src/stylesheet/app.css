@@ -1,0 +1,49 @@
+body {
+    margin: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+.titleBox {
+    text-align: center;
+    background : linear-gradient(to right,
+    #05cc98 10% 48%, #38e068 45% 50%, #ffaf3b 50% 52%, #ef8035 52% 75% );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dropdown_box {
+    margin-bottom: 10px;
+}
+
+.project_box {
+    width: 50%;
+    border: 1px solid #05cc98;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.project_box h2 {
+    text-align: center;
+    color: #ffaf3b;
+}
+
+.separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project_information_key {
+    color: #ef8035;
+}
+
+.project_information_value {
+    text-align: justify;
+    max-width: 50%;
+}

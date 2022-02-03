@@ -6,6 +6,7 @@ exports.GetAllProjects = async(req, res, next) => {
         const projectsData = await projectService.findProjects();
         res.statusCode = 200 ;
         res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.json(projectsData);
     } catch(error) {
         res.statusCode = 500 ;
