@@ -1,21 +1,23 @@
 const pageScraper = require('./pageScraper');
 const fs = require('fs');
+const { frenchTheme, englishTheme } = require('./theme');
 
-async function scrapeAll(browserInstance){
+async function scrapeAll(browserInstance, language){
     let browser;
     try{
         browser = await browserInstance;
         let scrapedSite = {};
-        scrapedSite['strategie'] = await pageScraper.scraper(browser, 'strategie');
-        scrapedSite['specifications'] = await pageScraper.scraper(browser, 'specifications');
-        scrapedSite['uxui'] = await pageScraper.scraper(browser, 'uxui');
-        scrapedSite['contenus'] = await pageScraper.scraper(browser, 'contenus');
-        scrapedSite['frontend'] = await pageScraper.scraper(browser, 'frontend');
-        scrapedSite['architecture'] = await pageScraper.scraper(browser, 'architecture');
-        scrapedSite['backend'] = await pageScraper.scraper(browser, 'backend');
-        scrapedSite['hebergement'] = await pageScraper.scraper(browser, 'hebergement');
+        const themeObject = language == 'fr' ? frenchTheme : englishTheme ; 
+        scrapedSite[themeObject.strategy] = await pageScraper.scraper(browser, language, themeObject.strategy);
+        scrapedSite[themeObject.specifications] = await pageScraper.scraper(browser, language, themeObject.specifications);
+        scrapedSite[themeObject.uxui] = await pageScraper.scraper(browser, language, themeObject.uxui);
+        scrapedSite[themeObject.contents] = await pageScraper.scraper(browser, language, themeObject.contents);
+        scrapedSite[themeObject.frontend] = await pageScraper.scraper(browser, language, themeObject.frontend);
+        scrapedSite[themeObject.architecture] = await pageScraper.scraper(browser, language, themeObject.architecture);
+        scrapedSite[themeObject.backend] = await pageScraper.scraper(browser, language, themeObject.backend);
+        scrapedSite[themeObject.hosting] = await pageScraper.scraper(browser, language, themeObject.hosting);
         await browser.close();
-        fs.writeFile(__dirname + '/../frontend/src/' + "gr491.json", JSON.stringify(scrapedSite), 'utf8', function(err) {
+        fs.writeFile(__dirname + '/../data/' + language + '_' + "gr491.json", JSON.stringify(scrapedSite), 'utf8', function(err) {
             if(err) return console.log(err);
         })
 
@@ -25,4 +27,4 @@ async function scrapeAll(browserInstance){
     }
 }
 
-module.exports = (browserInstance) => scrapeAll(browserInstance)
+module.exports = (browserInstance, language) => scrapeAll(browserInstance,language)
