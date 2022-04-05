@@ -5,14 +5,14 @@ export default function DropdownCategory(props) {
         <div class="dropdown_box">
             <InputLabel id="category_label">Category</InputLabel>
             <Select labelId="category_label" value={props.theme} onChange={props.handleTheme}>
-                <MenuItem value={"strategie"}>Stratégie</MenuItem>
+                <MenuItem value={"strategy"}>Stratégie</MenuItem>
                 <MenuItem value={"specifications"}>Spécifications</MenuItem>
                 <MenuItem value={"uxui"}>UX/UI</MenuItem>
-                <MenuItem value={"contenus"}>Contenus</MenuItem>
+                <MenuItem value={"contents"}>Contenus</MenuItem>
                 <MenuItem value={"frontend"}>Frontend</MenuItem>
                 <MenuItem value={"backend"}>Backend</MenuItem>
                 <MenuItem value={"architecture"}>Architecture</MenuItem>
-                <MenuItem value={"hebergement"}>Hébergement</MenuItem>
+                <MenuItem value={"hosting"}>Hébergement</MenuItem>
             </Select>
         </div>
     )

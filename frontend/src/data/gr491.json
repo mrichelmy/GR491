@@ -1,5 +1,5 @@
 {
-    "strategie": [
+    "strategy": [
         {
             "id": 0,
             "title": "Le besoin couvert par le service numérique s'inscrit-il dans l'un des objectifs de développement durable ? ",
@@ -3587,7 +3587,7 @@
             "description": "Tous support numérique doit être accessible par tout à chacun. Il est nécessaire de pouvoir tenir informé l'utilisateur du niveau d'accessibilité et des efforts en cours pour améliorer le service. Ces informations doivent être disponibles et explicitement fléchées dans le parcours de l'utilisateur."
         }
     ],
-    "contenus": [
+    "contents": [
         {
             "id": 178,
             "title": "Les balises de mise en forme de texte répondent-elles au besoin de hiérarchisation des informations, et pas à des mises en valeur de présentation ? ",
@@ -8882,7 +8882,7 @@
             "description": "Les analyses ACV peuvent être réalisées sur des services existants afin de les rendre plus efficaces dans le cas d'une refonte ou adaptation d'un service existant."
         }
     ],
-    "hebergement": [
+    "hosting": [
         {
             "id": 435,
             "title": "Les déchets issus du datacenter sont-ils valorisés ou recyclés ? ",

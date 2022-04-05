@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www",
-    "server":"sudo service mongod start"
+    "server":"sudo service mongod start",
+    "dev": "node ./bin/www --inspect"
   },
   "author": "mrchlm",
   "license": "ISC",

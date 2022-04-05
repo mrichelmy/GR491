@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import data from '../gr491.json';
+import frenchData from '../data/gr491.json';
+import englishData from '../data/en_gr491.json';
 
 
 function getImpacts(params) {
@@ -85,6 +86,7 @@ const columns = [
 ];
 
 function ReferencialGrid(props) {
+  const data = props.isFrench ? frenchData : englishData ;
   return (
     <div style={{ width: '100%' }}>
       <DataGrid

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Card, Box, CardContent, Typography } from '@mui/material';
-import data from '../gr491.json';
+import frenchData from '../data/gr491.json';
+import englishData from '../data/en_gr491.json';
+import '../stylesheet/app.css'
 
+//! TODO Refactor: Do not use data in cardDetail AND referencialGrid, define in state.
 export default function DetailCard(props) {
+    const data = props.isFrench ? frenchData : englishData ;
     const currentRef = data[props.theme].find((item) => item.id === props.refId);
     const detailsMap = {
         'ID': props.refId,
@@ -36,9 +40,8 @@ export default function DetailCard(props) {
 
     return (
         <>
-            {console.log(currentRef)}
             {currentRef !== undefined ?
-            <Box sx={{ maxWidth:400, padding: 2 }} >
+            <Box className="project_box" sx={{border: 0}}>
                 <Card variant={'outlined'}>{details}</Card>
             </Box>
             : 
