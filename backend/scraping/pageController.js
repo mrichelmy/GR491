@@ -8,14 +8,14 @@ async function scrapeAll(browserInstance, language){
         browser = await browserInstance;
         let scrapedSite = {};
         const themeObject = language == 'fr' ? frenchTheme : englishTheme ; 
-        scrapedSite[themeObject.strategy] = await pageScraper.scraper(browser, language, themeObject.strategy);
-        scrapedSite[themeObject.specifications] = await pageScraper.scraper(browser, language, themeObject.specifications);
-        scrapedSite[themeObject.uxui] = await pageScraper.scraper(browser, language, themeObject.uxui);
-        scrapedSite[themeObject.contents] = await pageScraper.scraper(browser, language, themeObject.contents);
-        scrapedSite[themeObject.frontend] = await pageScraper.scraper(browser, language, themeObject.frontend);
-        scrapedSite[themeObject.architecture] = await pageScraper.scraper(browser, language, themeObject.architecture);
-        scrapedSite[themeObject.backend] = await pageScraper.scraper(browser, language, themeObject.backend);
-        scrapedSite[themeObject.hosting] = await pageScraper.scraper(browser, language, themeObject.hosting);
+        scrapedSite["strategy"] = await pageScraper.scraper(browser, language, themeObject.strategy);
+        scrapedSite["specifications"] = await pageScraper.scraper(browser, language, themeObject.specifications);
+        scrapedSite["uxui"] = await pageScraper.scraper(browser, language, themeObject.uxui);
+        scrapedSite["contents"] = await pageScraper.scraper(browser, language, themeObject.contents);
+        scrapedSite["frontend"] = await pageScraper.scraper(browser, language, themeObject.frontend);
+        scrapedSite["architecture"] = await pageScraper.scraper(browser, language, themeObject.architecture);
+        scrapedSite["backend"] = await pageScraper.scraper(browser, language, themeObject.backend);
+        scrapedSite["hosting"] = await pageScraper.scraper(browser, language, themeObject.hosting);
         await browser.close();
         fs.writeFile(__dirname + '/../data/' + language + '_' + "gr491.json", JSON.stringify(scrapedSite), 'utf8', function(err) {
             if(err) return console.log(err);
